@@ -38,6 +38,9 @@
         $('#btnC').click(function(e) {
             btnCClick(e);
         });
+        $('#btnD').click(function(e){
+            btnDClick(e);
+        });
         init();
     });
     
@@ -161,18 +164,12 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
+        $('#btnD').prop('disabled', false);
         
     }
 
     // Alarmの処理
     function alarm(){
-      var canvas = $("#mycanvas")[0];
-      var ctx = canvas.getContext("2d");
-      var img = new Image();
-      img.src = "ksuisbg.gif";
-      img.onload = function(){
-        ctx.drawImage(img,0,0,300,300);
-      };
       var audio = new Audio();
       audio.src = "pin.wav";
       audio.play();
@@ -210,6 +207,15 @@
 
         
     }
+    function btnDClick(e){
+      var canvas = $("#mycanvas")[0];
+      var ctx = canvas.getContext("2d");
+      var img = new Image();
+      img.src = "Is.jpg";
+      img.onload = function(){
+        ctx.drawImage(img,0,0,150,150);
+      };
+    }
     
  
     // 繰り返し実行する処理
@@ -244,6 +250,8 @@
     <button id="btnA">ButtonA</button>  
     <button id="btnB">ButtonB</button>  
     <button id="btnC">ButtonC</button>  
+    <button
+    id="btnD">画像表示</button>
     <input type="number" id="minute" value=3 >
     <input type="number" id="second" value=0 >
     <>
